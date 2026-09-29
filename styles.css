@@ -1,0 +1,464 @@
+:root {
+  color-scheme: light;
+  --ink: #171511;
+  --muted: #625d54;
+  --paper: #ffffff;
+  --surface: #f8f7f4;
+  --signal: #c4874a;
+  --signal-dark: #8d5728;
+  --line: rgba(23, 21, 17, 0.14);
+  --max-width: 1180px;
+  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header,
+main,
+footer {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin-inline: auto;
+}
+
+.site-header {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 7px;
+  background: var(--signal);
+  color: var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+nav,
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+nav a,
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+nav a:hover,
+.footer-links a:hover {
+  color: var(--signal-dark);
+}
+
+.hero {
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  align-items: center;
+  gap: clamp(48px, 8vw, 112px);
+  padding-block: 88px;
+}
+
+.eyebrow,
+.feature-number {
+  margin: 0;
+  color: var(--signal-dark);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+blockquote {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Segoe UI",
+    sans-serif;
+  font-weight: 750;
+  letter-spacing: -0.045em;
+}
+
+h1 {
+  max-width: 760px;
+  margin-top: 18px;
+  font-size: clamp(2.7rem, 5.5vw, 5rem);
+  line-height: 1;
+}
+
+h2 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1.02;
+}
+
+.lede {
+  max-width: 650px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 20px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--signal);
+  color: var(--ink);
+}
+
+.button-secondary {
+  background: transparent;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.availability {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.app-store-placeholder {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 174px;
+  margin-top: 28px;
+  padding: 9px 14px 10px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.app-store-placeholder span {
+  font-size: 0.66rem;
+  line-height: 1;
+}
+
+.app-store-placeholder strong {
+  margin-top: 3px;
+  font-size: 1.12rem;
+  line-height: 1;
+}
+
+.record-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 18px 44px rgba(55, 42, 26, 0.09);
+}
+
+.record-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 7px;
+  background: var(--signal);
+}
+
+.record-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--signal), transparent 78%);
+  color: var(--signal-dark);
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.bike-symbol {
+  padding: 30px 4px 18px;
+}
+
+.bike-symbol svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bike-wheels {
+  stroke: var(--ink);
+  stroke-width: 4;
+}
+
+.bike-frame {
+  stroke: var(--ink);
+  stroke-width: 5;
+}
+
+.bike-details {
+  stroke: var(--signal-dark);
+  stroke-width: 4;
+}
+
+.bike-details circle {
+  fill: var(--surface);
+}
+
+.record-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.record-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 18px;
+}
+
+.record-stats strong {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.3rem;
+}
+
+.record-stats span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.feature-section {
+  padding: 110px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 70px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.feature-grid article {
+  min-height: 260px;
+  padding: clamp(28px, 5vw, 54px);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.feature-grid h3 {
+  margin: 32px 0 10px;
+  font-size: 1.4rem;
+}
+
+.feature-grid p,
+.coming-soon > p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.manifesto {
+  padding: 110px clamp(0px, 7vw, 80px);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+blockquote {
+  max-width: 980px;
+  margin: 30px auto 0;
+  font-size: clamp(2.25rem, 5vw, 5rem);
+  line-height: 1.08;
+}
+
+.coming-soon {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: clamp(36px, 8vw, 100px);
+  align-items: end;
+  padding: 110px 0;
+  border-top: 1px solid var(--line);
+}
+
+.coming-soon h2 {
+  max-width: 760px;
+  margin-top: 16px;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 36px;
+  align-items: end;
+  padding: 46px 0;
+  border-top: 1px solid var(--line);
+}
+
+footer strong {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+footer p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.copyright {
+  white-space: nowrap;
+}
+
+.policy {
+  width: min(calc(100% - 40px), 780px);
+  margin: 0 auto;
+  padding: 80px 0 120px;
+}
+
+.policy h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+.policy .updated {
+  margin: 18px 0 52px;
+  color: var(--muted);
+}
+
+.policy h2 {
+  margin-top: 48px;
+  font-family: inherit;
+  font-size: 1.4rem;
+  letter-spacing: 0;
+}
+
+.policy p,
+.policy li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.policy a {
+  color: var(--signal-dark);
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    min-height: 68px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  nav a:first-child {
+    display: none;
+  }
+
+  .hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 64px;
+    padding-block: 70px;
+  }
+
+  .record-card {
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+
+  .section-heading,
+  .coming-soon {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+}
+
