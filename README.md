@@ -2,14 +2,9 @@
 
 Static landing page and privacy policy for BikeStable.
 
-The home page currently displays a non-interactive App Store placeholder. Replace
-it with Apple’s official App Store badge and the product-page URL when the listing
-is available.
-
-## Photo credit
-
-Hero card image is your Specialized Roll photo
-(`assets/bike-action.jpg`).
+The hero displays an in-app Bike Detail screenshot and a non-interactive App
+Store placeholder. Replace the placeholder with Apple’s official badge and
+product-page URL when the listing is available.
 
 1. Create a new public GitHub repository named `bikestable-site`.
 2. In this directory, add the GitHub repository as `origin`.

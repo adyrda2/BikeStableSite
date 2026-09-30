@@ -133,38 +133,6 @@ h2 {
   line-height: 1.6;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 20px;
-  border: 1px solid var(--ink);
-  border-radius: 6px;
-  font-weight: 750;
-  text-decoration: none;
-}
-
-.button-primary {
-  background: var(--signal);
-  color: var(--ink);
-}
-
-.button-secondary {
-  background: transparent;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-}
-
 .availability {
   margin: 18px 0 0;
   color: var(--muted);
@@ -193,77 +161,19 @@ h2 {
   line-height: 1;
 }
 
-.record-card {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(24px, 4vw, 38px);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--surface);
-  box-shadow: 0 18px 44px rgba(55, 42, 26, 0.09);
+.app-preview {
+  width: min(100%, 360px);
+  margin: 0;
+  justify-self: center;
 }
 
-.record-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 7px;
-  background: var(--signal);
-}
-
-.record-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.status {
-  padding: 6px 9px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--signal), transparent 78%);
-  color: var(--signal-dark);
-  font-size: 0.75rem;
-  font-weight: 750;
-}
-
-.bike-symbol {
-  margin: 16px auto 12px;
-  width: min(100%, 320px);
-  border-radius: 10px;
-  background: #ebe6dc;
-  overflow: visible;
-}
-
-.bike-symbol img {
+.app-preview img {
   display: block;
   width: 100%;
   height: auto;
-  object-fit: contain;
-}
-
-.record-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-}
-
-.record-stats div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-top: 18px;
-}
-
-.record-stats strong {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 1.3rem;
-}
-
-.record-stats span {
-  color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  border: 1px solid var(--line);
+  border-radius: 36px;
+  box-shadow: 0 28px 70px rgba(55, 42, 26, 0.16);
 }
 
 .feature-section {
@@ -397,9 +307,8 @@ footer p {
     padding-block: 70px;
   }
 
-  .record-card {
-    width: min(100%, 520px);
-    justify-self: center;
+  .app-preview {
+    width: min(100%, 340px);
   }
 
   .section-heading,
@@ -420,10 +329,6 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .button:hover {
-    transform: none;
   }
 }
 
