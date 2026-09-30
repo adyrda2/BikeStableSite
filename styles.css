@@ -109,8 +109,7 @@ nav a:hover,
 }
 
 h1,
-h2,
-blockquote {
+h2 {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Segoe UI",
     sans-serif;
@@ -232,35 +231,18 @@ h2 {
 }
 
 .bike-symbol {
-  padding: 30px 4px 18px;
+  margin: 16px auto 12px;
+  width: min(100%, 320px);
+  border-radius: 10px;
+  background: #ebe6dc;
+  overflow: visible;
 }
 
-.bike-symbol svg {
+.bike-symbol img {
   display: block;
   width: 100%;
-  overflow: visible;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.bike-wheels {
-  stroke: var(--ink);
-  stroke-width: 4;
-}
-
-.bike-frame {
-  stroke: var(--ink);
-  stroke-width: 5;
-}
-
-.bike-details {
-  stroke: var(--signal-dark);
-  stroke-width: 4;
-}
-
-.bike-details circle {
-  fill: var(--surface);
+  height: auto;
+  object-fit: contain;
 }
 
 .record-stats {
@@ -326,19 +308,6 @@ h2 {
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
-}
-
-.manifesto {
-  padding: 110px clamp(0px, 7vw, 80px);
-  border-top: 1px solid var(--line);
-  text-align: center;
-}
-
-blockquote {
-  max-width: 980px;
-  margin: 30px auto 0;
-  font-size: clamp(2.25rem, 5vw, 5rem);
-  line-height: 1.08;
 }
 
 .coming-soon {
