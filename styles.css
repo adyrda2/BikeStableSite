@@ -162,7 +162,7 @@ h2 {
 }
 
 .app-preview {
-  width: min(100%, 360px);
+  width: min(100%, 280px);
   margin: 0;
   justify-self: center;
 }
@@ -172,8 +172,8 @@ h2 {
   width: 100%;
   height: auto;
   border: 1px solid var(--line);
-  border-radius: 36px;
-  box-shadow: 0 28px 70px rgba(55, 42, 26, 0.16);
+  border-radius: 28px;
+  box-shadow: 0 22px 56px rgba(55, 42, 26, 0.14);
 }
 
 .feature-section {
@@ -308,7 +308,7 @@ footer p {
   }
 
   .app-preview {
-    width: min(100%, 340px);
+    width: min(100%, 260px);
   }
 
   .section-heading,
