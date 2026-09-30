@@ -142,9 +142,9 @@ h2 {
 .app-store-placeholder {
   display: inline-flex;
   flex-direction: column;
-  min-width: 174px;
+  min-width: 190px;
   margin-top: 28px;
-  padding: 9px 14px 10px;
+  padding: 10px 16px 11px;
   border-radius: 8px;
   background: var(--ink);
   color: var(--paper);
@@ -157,14 +157,30 @@ h2 {
 
 .app-store-placeholder strong {
   margin-top: 3px;
-  font-size: 1.12rem;
+  font-size: 1.2rem;
   line-height: 1;
 }
 
 .app-preview {
+  position: relative;
+  isolation: isolate;
   width: min(100%, 250px);
   margin: 0;
   justify-self: center;
+}
+
+.app-preview::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 10% -28%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(196, 135, 74, 0.18) 0%,
+    rgba(196, 135, 74, 0) 70%
+  );
+  filter: blur(12px);
 }
 
 .app-preview img {
@@ -174,6 +190,14 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 28px;
   box-shadow: 0 22px 56px rgba(55, 42, 26, 0.14);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+@media (hover: hover) {
+  .app-preview:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 66px rgba(55, 42, 26, 0.18);
+  }
 }
 
 .feature-section {
@@ -329,6 +353,10 @@ footer p {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .app-preview img {
+    transition: none;
   }
 }
 
