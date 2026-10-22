@@ -87,9 +87,9 @@ nav a:hover,
 .hero {
   min-height: 680px;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(500px, 1.1fr);
   align-items: center;
-  gap: clamp(48px, 8vw, 112px);
+  gap: clamp(44px, 6vw, 80px);
   padding-block: 88px;
 }
 
@@ -161,10 +161,20 @@ h2 {
   line-height: 1;
 }
 
+.app-previews {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 30px);
+  align-items: start;
+}
+
 .app-preview {
-  width: min(100%, 250px);
   margin: 0;
-  justify-self: center;
+  min-width: 0;
+}
+
+.app-preview-services {
+  margin-top: 52px;
 }
 
 .app-preview img {
@@ -174,6 +184,17 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 28px;
   box-shadow: 0 22px 56px rgba(55, 42, 26, 0.14);
+}
+
+.app-preview figcaption {
+  margin-top: 14px;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .feature-section {
@@ -307,8 +328,16 @@ footer p {
     padding-block: 70px;
   }
 
-  .app-preview {
-    width: min(100%, 235px);
+  .app-previews {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    justify-items: center;
+  }
+
+  .app-preview,
+  .app-preview-services {
+    width: min(100%, 280px);
+    margin-top: 0;
   }
 
   .section-heading,
